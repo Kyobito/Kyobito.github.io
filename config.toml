@@ -1,4 +1,4 @@
-baseURL = 'https://kyobito.github.io'
+baseURL = 'https://kyobito.github.io/'
 languageCode = 'en-us'
 title = "Kyobito's Portfolio"
 theme = "hugo-initio"
