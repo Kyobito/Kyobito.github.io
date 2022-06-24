@@ -1,0 +1,51 @@
+{{ define "main"}}
+  {{ $styles := resources.Get "css/styles.css" }}
+  {{ $css := $styles | resources.Minify | resources.Fingerprint "sha512"  }}
+  <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+  <main id="main">
+
+    <div class="container">
+  
+      {{ if .Site.Params.showSubheader }}
+        {{ partial "home/subheader.html" . }}
+      {{ end }}
+      
+        {{ range .Site.Sections }}
+            {{ range .Sections.ByWeight }}
+                {{ $stype := .Type}}
+                {{ if (or (and (eq $stype "about-section") (.Site.Params.showAboutSec))
+                          (and (eq $stype "projects") (.Site.Params.showProjects))
+                          (and (eq $stype "education") (.Site.Params.showEducation))
+                          (and (eq $stype "experience") (.Site.Params.showExperience))
+                          (and (eq $stype "skills") (.Site.Params.showSkills))
+                          (eq $stype "single")) }}
+
+                     <div class="row section featured topspace">
+                       <h2 class="section-title">
+                          <a id="{{ $stype }}" style="padding-top: 70px;"></a>
+                          
+                         <span>{{.Title}}</span>
+                       </h2>
+                     {{ if or (eq $stype "about-section") (eq $stype "skills") }}
+                       {{ partial "home/subheader.html" . }}
+
+                     {{ else if eq $stype "projects" }}
+                       {{ partial "home/projects.html" . }}
+
+                     {{ else if or (eq $stype "education") (eq $stype "experience") }}
+                       {{ partial "home/exper-edu.html" . }}
+                    
+                    <!--Skills utilizes subheader-->
+
+                     {{ else if eq $stype "single"  }}
+                       {{ partial "home/single.html" . }}
+
+                     {{ end }}
+                </div>	<!-- /section -->
+              {{ end }}
+            {{ end }}
+        {{ end }}
+    </div>	<!-- /container -->
+  </main>
+
+{{ end }}

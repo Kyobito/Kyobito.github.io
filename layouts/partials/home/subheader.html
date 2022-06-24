@@ -1,0 +1,36 @@
+{{ if eq .Type "about-section"}}
+    {{ range where .Site.Pages "Type" "about-section" }}
+    <div  class="row section topspace">
+        <div class="col-md-12"> 
+            <div class="lead text-center text-muted">
+            {{ .Content }}
+            </div>
+        </div>
+    </div> <!-- / section -->
+    {{ end }}
+
+{{else if eq .Type "skills"}}
+    {{ range where .Site.Pages "Type" "skills" }}
+    <div class="row section topspace">
+        <div class="col-md-12">
+            <div class="lead text-center text-muted">
+            {{ .Content }}
+            </div>
+        </div>
+    </div> <!-- / section -->
+    {{ end }}
+
+{{else}}
+    {{ range where .Site.Pages "Type" "subheader" }}
+    <div class="row section topspace">
+        <div class="col-md-12">
+            <div class="lead text-center text-muted">
+            {{ .Content }}
+            </div>
+        </div>
+    </div> <!-- / section -->
+    {{ end }}
+
+{{end}}
+
+
