@@ -1,50 +1,46 @@
 [
     {
         "id": 0,
-        "name": "Sample title - big data solutions",
-        "image": "images/s1.jpg",
-        "url": "#",
+        "name": "Portfolio Website",
+        "image": "images/portfolio-logo.png",
+        "url": "https://kyobito.github.io/",
         "items": [
             {
-                "name": "Web design"
+                "name": "Web development"
             },
             {
-                "name": "Wordpress"
+                "name": "Hugo"
             },
             {
-                "name": "Logotype"
+                "name": "HTML/CSS/Javascript"
             }
         ]
     },
     {
         "id": 1,
-        "name": "Pure ipsum - development services for people",
-        "image": "images/s1.jpg",
-        "url": "#",
+        "name": "Pencils Discord Bot",
+        "image": "images/bot-logo.png",
+        "url": "https://github.com/Kyobito/Pencil-Unrefined",
         "items": [
             {
-                "name": "Web design",
-                "url": "#"
+                "name": "Web development"
             },
             {
-                "name": "Wordpress",
-                "url": "#"
+                "name": "Discord Bot"
+            },
+            {
+                "name": "Python"
             }
         ]
     },
     {
         "id": 2,
-        "name": "Lorem studios - interior and patio design",
-        "image": "images/s1.jpg",
-        "url": "#",
+        "name": "Coming Soon!",
+        "image": "images/soon.png",
+        "url": "",
         "items": [
             {
-                "name": "Web design",
-                "url": "#"
-            },
-            {
-                "name": "Logotype",
-                "url": "#"
+                "name": "Web development"
             }
         ]
     }
